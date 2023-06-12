@@ -53,11 +53,9 @@ img {
 }
 
 @media (min-width: 2000px) {
-  /*a little test to see if i get all 8 columns in one row at high resolutions, 
-  because true responsive design goes both ways...*/
+  /*because true responsive design goes both ways...*/
   .column {
     flex: 12.5%;
     max-width: 12.5%;
-    /* min-height: 100%; */
   }
 }
