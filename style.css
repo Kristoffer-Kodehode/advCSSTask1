@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box; /*making css include borders in max width and height*/
+  margin: 0; /*removing default margins and padding*/
+  padding: 0;
+  background-color: #222; /*making background dark to contrast with images*/
+  color: #e9e9e9; /*contraasting text with the background and matching the images*/
+}
+
+h1 {
+  text-align: center; /*centering the header*/
+  padding: 10px 0 20px 0; /*placing it a bit down from the top and leaving space beneath*/
+  text-shadow: -1px -2px #e9e9e956; /*adding shadow on top to sort of theme the header 
+  with the mountains and the snow*/
+}
+
+img {
+  width: 100%; /*making sure the images are as wide as they can be 
+                within restrictions given to the columns they're in*/
+  margin: 10px; /*adding some space between images*/
+}
+
+.gallery {
+  display: flex; /*making the columns line up next to eachother*/
+  flex-wrap: wrap; /*making the columns wrap around to the next row and 
+                    setting up for the columns to stack when viewed on a smaller medium*/
+  justify-content: center; /*centering the gallery*/
+}
+
+.column {
+  /*making each column normally only take a fourth of the parent element - the gallery. 
+  Thus making 4 of them fit perfectly next to eachother while the last 4 wrap underneath*/
+  flex: 25%;
+  max-width: 25%;
+}
+
+@media (max-width: 800px) {
+  /*making the columns take up to half of the available space, so now we 
+   have only 2 columns in each row while the rest wrap around like before, 
+   just with 2 columns per row instead of 4*/
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  /*further making it all one column that takes all the available room 
+    when viewed at 600px wide (or less)*/
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
